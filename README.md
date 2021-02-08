@@ -1,1 +1,1 @@
-# Whack-A-Mole
+ [Whack-A-Mole](https://kiryuha94.github.io/Whack-A-Mole/)
