@@ -6,6 +6,8 @@ const game = document.getElementById('game');
 let score = 0;
 let isTimeOver = false;
 let currMole;
+const DISPLAY_TIME = 700;
+const TIME_ON_GAME = 20000
 
 const chouseMole = (moles) => {
   const index = Math.floor(Math.random() * moles.length);
@@ -18,7 +20,6 @@ const chouseMole = (moles) => {
 };
 
 const showMole = () => {
-  const DISPLAY_TIME = 700;
   const mole = chouseMole(moles);
   mole.classList.add('up');
   setTimeout(() => {
@@ -31,13 +32,14 @@ const startGame = () => {
   score = 0;
   scoreTable.innerText = score;
   button.disabled = true;
+  button.style.opacity = "0.5"
   isTimeOver = false;
   showMole();
   setTimeout(() => {
+    button.style.opacity = "1"
     button.disabled = false;
     isTimeOver = true;
-  }, 20000);
-  game.focus();
+  }, TIME_ON_GAME);
 };
 
 function kick(e) {
