@@ -38,6 +38,7 @@ const startGame = () => {
   showMole();
   setTimeout(() => {
     button.style.opacity = "1";
+    button.style.cursor = "pointer";
     button.disabled = false;
     isTimeOver = true;
   }, TIME_ON_GAME);
